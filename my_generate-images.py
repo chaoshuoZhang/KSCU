@@ -68,12 +68,13 @@ if __name__ == '__main__':
     parser.add_argument('--num_samples', help='number of samples per prompt', type=int, required=False, default=1)
     parser.add_argument('--ddim_steps', help='ddim steps of inference used to train', type=int, required=False,
                         default=50)
+    parser.add_argument('--version', type=str, required=False, default='1-4')
                         
     parser.add_argument('--finetuner', choices=['true', 'false'], required=True)
     args = parser.parse_args()
     args.finetuner = args.finetuner == 'true'
     print(args.finetuner)
-    diffuser = StableDiffuser(scheduler='DDIM',version='1-4').to(args.device)
+    diffuser = StableDiffuser(scheduler='DDIM',version=args.version).to(args.device)
 
     finetuner = FineTunedModel(diffuser, train_method=args.train_method)
     esd_path = f'{args.model_name}'
