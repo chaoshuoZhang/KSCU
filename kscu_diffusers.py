@@ -143,4 +143,4 @@ if __name__ == '__main__':
     print(args.save_path)
     train(args)
     print('save:',args.save_path)
-    # python cce_diffusers.py  --version 1-5  --mode style --train_method xattn  --use_augmentation true --device cuda:0 --erase_concept "Dogs"
+
