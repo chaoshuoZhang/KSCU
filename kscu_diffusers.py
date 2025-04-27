@@ -106,7 +106,7 @@ if __name__ == '__main__':
     parser.add_argument('--advantage_threshold', type=float, default=0.2)
     
     parser.add_argument('--start', type=int, default=25)
-    parser.add_argument('--version', , choices=['2-1', '1-4','1-5','UnlearnCanvas'], default='1-4')# stable diffusion version
+    parser.add_argument('--version',  choices=['2-1', '1-4','1-5','UnlearnCanvas'], default='1-4')# stable diffusion version
     
     
      
