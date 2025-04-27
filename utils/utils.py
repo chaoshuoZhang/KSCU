@@ -233,7 +233,11 @@ class StableDiffuser(torch.nn.Module):
             "openai/clip-vit-large-patch14")
             
         if self.version == '1-5':
-            model_path=f"sd-legacy/stable-diffusion-v1-5"
+            model_path=f"runwayml/stable-diffusion-v1-5"
+        elif  self.version == "2-0":
+            model_path=f"stabilityai/stable-diffusion-2"
+            self.tokenizer = CLIPTokenizer.from_pretrained(model_path, subfolder="tokenizer")
+            self.text_encoder = CLIPTextModel.from_pretrained(model_path, subfolder="text_encoder")
         elif self.version == "2-1":
             model_path = f"stabilityai/stable-diffusion-2-1"
             self.tokenizer = CLIPTokenizer.from_pretrained(model_path, subfolder="tokenizer")
