@@ -1,4 +1,4 @@
-# KSCU
+# KSCU: Concept Unlearning by Modeling Key Steps of Diffusion Process
 ## Installation
 ```
 git clone https://github.com/xxxx/KSCU.git
